@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="mn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Намын дотоод удирдлагын самбар</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="loginScreen" class="login-screen">
+      <div class="login-card">
+        <h1>Нэвтрэх</h1>
+        <p class="login-subtitle">Намын дотоод удирдлагын систем</p>
+        <form id="loginForm" novalidate>
+          <label for="regNumber">Регистрийн дугаар</label>
+          <input
+            id="regNumber"
+            name="regNumber"
+            type="text"
+            autocomplete="username"
+            placeholder="AA00000000"
+            required
+          />
+
+          <label for="password">Нууц үг</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            placeholder="••••••••"
+            required
+          />
+
+          <button type="submit">Нэвтрэх</button>
+          <button type="button" class="secondary-btn" onclick="goToDashboard()">
+            Шууд самбар руу орох
+          </button>
+          <p id="loginError" class="login-error" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <div id="dashboardScreen" class="dashboard-screen hidden">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <span class="logo-dot"></span>
+          <span class="logo-text">Дотоод систем</span>
+        </div>
+        <nav class="menu">
+          <a href="#" class="menu-item">
+            <span class="menu-icon"></span>
+            Айм хэсэг самбар
+          </a>
+          <a href="#" class="menu-item">
+            <span class="menu-icon"></span>
+            Миний мэдээлэл
+          </a>
+          <a href="#" class="menu-item">
+            <span class="menu-icon"></span>
+            Танилцуулга
+          </a>
+          <a href="#" class="menu-item active">
+            <span class="menu-icon"></span>
+            Хурал
+          </a>
+          <a href="#" class="menu-item">
+            <span class="menu-icon"></span>
+            Хурлын гишүүд
+          </a>
+          <a href="#" class="menu-item">
+            <span class="menu-icon"></span>
+            Гишүүдийн санал
+          </a>
+          <a href="#" class="menu-item">
+            <span class="menu-icon"></span>
+            Саналын эрхтэй гишүүд
+          </a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="page-header">
+          <h2>Хурал</h2>
+          <p>Хурлын бүртгэл, Байршил, холбогдох уулзалгаа</p>
+        </header>
+
+        <section class="summary-row">
+          <article class="summary-card">
+            <p class="summary-label">Нийт хурал</p>
+            <p class="summary-value">1</p>
+          </article>
+          <article class="summary-card">
+            <p class="summary-label">Идэвхтэй төлөв</p>
+            <p class="summary-value">0</p>
+          </article>
+          <article class="summary-card">
+            <p class="summary-label">Цуцлагдсан</p>
+            <p class="summary-value">0</p>
+          </article>
+        </section>
+
+        <section class="table-section">
+          <table>
+            <thead>
+              <tr>
+                <th>Хурлын нэр</th>
+                <th>Огноо / Цаг</th>
+                <th>Төрөл</th>
+                <th>Төлөв</th>
+                <th>Нийт байршил</th>
+                <th>Үлдсэн</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Удирдах зөвлөлийн ээлжит хурал болон орон нутгийн салбар хороодын уялдаа холбооны нэгдсэн хэлэлцүүлэг</td>
+                <td>
+                  <div>2026/03/19</div>
+                  <div class="time">10:00 - 18:00</div>
+                </td>
+                <td><span class="badge badge-blue">Ерөнхий хурал</span></td>
+                <td><span class="badge badge-yellow">Хурлын бус</span></td>
+                <td class="number-cell">16</td>
+                <td class="number-cell">1</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <p class="matching-line">
+          Match the layout, hierarchy, text density, sidebar width, spacing, table structure, and empty white space exactly like the reference.
+        </p>
+      </main>
+    </div>
+
+    <script>
+      function goToDashboard() {
+        var login = document.getElementById("loginScreen");
+        var dash = document.getElementById("dashboardScreen");
+        if (login && dash) {
+          login.classList.add("hidden");
+          dash.classList.remove("hidden");
+        }
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
